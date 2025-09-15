@@ -1,0 +1,3 @@
+cd appka
+npm install
+npm run dev
