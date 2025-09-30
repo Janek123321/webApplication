@@ -46,7 +46,7 @@ if (wybranyKurs) {
 
       <form onSubmit={handleSubmit} className='form-group'>
         
-          <label htmlFor="imie" for="imie" >Imię i nazwisko</label><br />
+          <label htmlFor="imie">Imię i nazwisko</label><br />
           <input type="text" className="form-control" value={inputName} onChange={(e) => setinputName(e.target.value)} id="imie" /><br />
         
         <label htmlFor="nrKurs">Numer kursu</label><br />

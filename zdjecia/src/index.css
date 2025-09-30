@@ -1,8 +1,13 @@
-div{
-  float: left;
+.imageComponent{
+  float: left
 }
 
 img{
   margin: 5px;
   border-radius: 10px;
+}
+
+.switch-group {
+  display: flex;
+  gap: 1rem;
 }

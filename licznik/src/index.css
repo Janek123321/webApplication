@@ -1,0 +1,46 @@
+body{
+    background-color: gray;
+    text-align: center;
+}
+
+h1{
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 100px;
+}
+
+form{
+    border: solid, 1px, blue;
+    text-align: center;
+    width: 500px;
+    margin-left: 35%;
+}
+
+span{
+    color: red;
+}
+button{
+    background-color: rgb(54, 104, 197);
+    text-align: center;
+    height: 50px;
+    width: 75px;
+    margin-right: 10px;
+    color: white;
+    border: none;
+}
+
+.krok{
+    color: blue;
+}
+
+
+button:hover{
+    cursor: pointer;
+}
+.krok2{
+    margin-bottom: 30px;
+    width: 50px;
+}
+
+

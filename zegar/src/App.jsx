@@ -21,10 +21,10 @@ const TimerWithStep = () => {
 
   return (
     <div>
-      <h2>Timer</h2>
+      <h1>Timer</h1>
+      <form>
       <p>{seconds} sekund</p>
-
-      <label>
+      
         Krok (sekundy):&nbsp;
         <input
           type="number"
@@ -32,10 +32,9 @@ const TimerWithStep = () => {
           onChange={(e) => setStep(e.target.value)}
           min="1"
         />
-      </label>
-
       <br /><br />
       <button onClick={startTimer}>Start</button>
+      </form>
     </div>
   );
 };

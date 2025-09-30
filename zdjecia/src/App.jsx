@@ -16,7 +16,7 @@ import './App.css'
 
 function Image({ imgName, imgAltName, downloadsNum, onDownload }) {
   return (
-    <div>
+    <div className="imageComponent">
       <img src={imgName} alt={imgAltName} />
       <h4>Pobrań: {downloadsNum}</h4>
       <button onClick={onDownload}>Pobierz</button>
@@ -40,14 +40,14 @@ function App() {
     { id: 11, alt: "Garbus", filename: obraz12, category: 3, downloads: 321 }
   ])
 
-  // ✅ Przechowuj stany checkboxów
+  // Przechowuj stany checkboxów
   const [filters, setFilters] = useState({
     1: true, // Kwiaty
     2: true, // Zwierzęta
     3: true, // Samochody
   })
 
-  // ✅ Obsługa kliknięcia checkboxa
+  // Obsługa kliknięcia checkboxa
   const handleCheckboxChange = (category) => {
     setFilters(prev => ({
       ...prev,
@@ -55,7 +55,7 @@ function App() {
     }))
   }
 
-  // ✅ Obsługa kliknięcia "Pobierz"
+  // Obsługa kliknięcia "Pobierz"
   const downloadHandle = (numberToChange) => {
     setTab(prevTab =>
       prevTab.map((item, index) =>
@@ -66,38 +66,46 @@ function App() {
     )
   }
 
-  // ✅ Filtrowanie zdjęć do wyświetlenia
-  const filteredImages = tab.filter(item => filters[item.category]===true)
+  // Filtrowanie zdjęć do wyświetlenia
+  const filteredImages = tab.filter(item => filters[item.category] === true)
 
   return (
     <>
-      <h1>Kategorie zdjęć</h1> <br />
+      <h1>Kategorie zdjęć</h1>
+      <form className="switch-group">
+        <div className="form-check form-switch">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            id="check1"
+            checked={filters[1]}
+            onChange={() => handleCheckboxChange(1)}
+          />
+          <label className="form-check-label" htmlFor="check1">Kwiaty</label>
+        </div>
 
-      <form>
-        <input
-          type="checkbox"
-          checked={filters[1]}
-          onChange={() => handleCheckboxChange(1)}
-          id="check1"
-        />
-        <label htmlFor="check1">Kwiaty</label>
+        <div className="form-check form-switch">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            id="check2"
+            checked={filters[2]}
+            onChange={() => handleCheckboxChange(2)}
+          />
+          <label className="form-check-label" htmlFor="check2">Zwierzęta</label>
+        </div>
 
-        <input
-          type="checkbox"
-          checked={filters[2]}
-          onChange={() => handleCheckboxChange(2)}
-          id="check2"
-        />
-        <label htmlFor="check2">Zwierzęta</label>
-
-        <input
-          type="checkbox"
-          checked={filters[3]}
-          onChange={() => handleCheckboxChange(3)}
-          id="check3"
-        />
-        <label htmlFor="check3">Samochody</label>
-      </form>
+        <div className="form-check form-switch">
+          <input
+            className="form-check-input"
+            type="checkbox"
+            id="check3"
+            checked={filters[3]}
+            onChange={() => handleCheckboxChange(3)}
+          />
+          <label className="form-check-label" htmlFor="check3">Samochody</label>
+        </div>
+      </form> 
 
       {filteredImages.map((item) => (
         <Image
