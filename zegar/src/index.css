@@ -1,0 +1,21 @@
+h1{
+    text-align: center;
+    background-color: black;
+    color: white;
+    height: 100px;
+}
+
+form{
+    border: solid, 1px, black;
+    text-align: center;
+}
+
+button{
+    background-color: rgb(54, 104, 197);
+    text-align: center;
+    height: 30px;
+    width: 75px;
+    margin-right: 10px;
+    color: white;
+    border: none;
+}

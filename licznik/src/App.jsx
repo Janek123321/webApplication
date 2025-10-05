@@ -22,18 +22,22 @@ function App() {
   return (
     <>
       <h1>Aplikacja licznika w ReactJS</h1>
+      <div>
       <form action="">
-        <p>licznik: {count}</p>
+        <p>licznik: <span>{count}</span></p>
         <button onClick={add} type="button">Add</button>
         <button onClick={set} type="button">set</button>
-        <button onClick={reset} type="button">reset</button>
+        <button onClick={reset} type="button">reset</button><br /><br />
+        <span className="krok">Krok: </span>
         <input
+        className='krok2'
           type="number"
           value={krokk}
           onChange={(e) => setKrokk(Number(e.target.value))}
           min="1"
         />
       </form>
+      </div>
     </>
   )
 }
